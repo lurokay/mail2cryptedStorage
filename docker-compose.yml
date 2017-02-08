@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+    cryptomator:
+        expose:
+
+        ports:
+          #  - "8083:8083"
+
+        build: cryptomator
+        privileged: false
+        devices:
+        #  - "/dev/ttyUSB0:/dev/ttyUSB0"
+        volumes:
+            - connectVault.sh:/opt/cryptomator/connectVault.sh
+            - disconnectVault.sh:/opt/cryptomator/disconnectVault.sh
+            #- /plainIn
+
+        networks:
+            - code-network
+        depends_on:
+          #  - "mysql"
+
+
+
+networks:
+    code-network:
+        driver: bridge

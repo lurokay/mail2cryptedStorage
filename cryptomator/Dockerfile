@@ -2,6 +2,12 @@ FROM debian:jessie
 
 MAINTAINER Lukas Krueck <git@lukaskrueck.de>
 
+ENV DEBIAN_FRONTEND noninteractive
+ENV TERM xterm
+
+
+RUN sudo su
+RUN cd
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN cd /opt

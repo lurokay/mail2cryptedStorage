@@ -2,7 +2,8 @@ FROM debian:jessie
 
 MAINTAINER Lukas Krueck <git@lukaskrueck.de>
 
-RUN apt-get update && apt-get upgrade -y
+RUN apt-get update
+RUN apt-get upgrade -y
 RUN cd /opt
 RUN mkdir cryptomator
 RUN cd cryptomator
